@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Box, Text } from "react-native-design-utility";
-import { TouchableOpacity } from "react-native";
-import Icon from "react-native-ionicons";
 
 import OnboardingLogo from "../common/OnboardingLogo";
+import LoginButton from "../common/LoginButton";
 
 class LoginScreen extends Component {
   state = {};
@@ -14,28 +13,8 @@ class LoginScreen extends Component {
           <OnboardingLogo />
         </Box>
         <Box f={0.9} w="100%">
-          <TouchableOpacity>
-            <Box
-              align="center"
-              dir="row"
-              shadow={1}
-              bg="green"
-              w="80%"
-              self="center"
-              p="2xs"
-              radius="xs"
-            >
-              <Box mr="sm">
-                <Box bg="white" h={32} w={32} radius="xs" center>
-                  <Icon name="add" />
-                </Box>
-              </Box>
-              <Box />
-              <Text size="md" color="white">
-                Continue With Google
-              </Text>
-            </Box>
-          </TouchableOpacity>
+          <LoginButton type="google">Continue with Google</LoginButton>
+          <LoginButton type="facebook">Continue with Facebook</LoginButton>
         </Box>
       </Box>
     );
