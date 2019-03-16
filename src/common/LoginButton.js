@@ -17,8 +17,8 @@ const bgColor = type => {
   }
 };
 
-const LoginButton = ({ children, type }) => (
-  <TouchableOpacity>
+const LoginButton = ({ children, type, onPress }) => (
+  <TouchableOpacity onPress={onPress}>
     <Box
       align="center"
       dir="row"
@@ -45,7 +45,7 @@ const LoginButton = ({ children, type }) => (
               name="facebook"
               color={theme.color.facebookBlue}
               size={30}
-              style={{ position: "absolute" }}
+              style={{ position: "absolute", bottom: -3, right: 5 }}
             />
           )}
         </Box>
