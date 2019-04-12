@@ -12,7 +12,7 @@ const BoxAnimated = Animated.createAnimatedComponent(Box);
 class LoginScreen extends Component {
   state = {
     opacity: new Animated.Value(0),
-    position: new Animated.Value(0),
+    position: new Animated.Value(0)
   };
 
   componentDidMount() {
@@ -23,7 +23,7 @@ class LoginScreen extends Component {
     Animated.timing(this.state.opacity, {
       toValue: 1,
       duration: 200,
-      delay: 100,
+      delay: 100
     }).start();
   };
 
@@ -31,7 +31,7 @@ class LoginScreen extends Component {
     Animated.timing(this.state.position, {
       toValue: 1,
       duration: 300,
-      useNativeDriver: true,
+      useNativeDriver: true
     }).start();
   };
 
@@ -58,7 +58,7 @@ class LoginScreen extends Component {
 
     const logoTranslate = this.state.position.interpolate({
       inputRange: [0, 1],
-      outputRange: [145, 0],
+      outputRange: [145, 0]
     });
 
     return (
