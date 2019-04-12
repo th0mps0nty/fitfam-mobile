@@ -4,10 +4,7 @@
     "slug": "fitfam-mobile",
     "privacy": "public",
     "sdkVersion": "32.0.0",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/img/squareLogo.png",
@@ -19,13 +16,18 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "facebookAppId": "307143509948503",
-    "facebookScheme": "fb307143509948503"
+    "facebookScheme": "fb307143509948503",
+    "facebookDisplayName": "FitFam Mobile",
+    "extra": {
+      "googleAppId": {
+        "ios": "527101437413-5p78i1gugio1hc6914p5pg3oi624djmv.apps.googleusercontent.com",
+        "android": "527101437413-7b40qqhulkv6pqj39em2n24m62f95nkq.apps.googleusercontent.com"
+      }
+    }
   }
 }

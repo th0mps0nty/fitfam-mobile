@@ -5,13 +5,14 @@ import { TouchableOpacity, Alert, Animated } from "react-native";
 import OnboardingLogo from "../common/OnboardingLogo";
 import LoginButton from "../common/LoginButton";
 import { FacebookApi } from "../api/Facebook";
+import { GoogleApi } from "../api/Google";
 
 const BoxAnimated = Animated.createAnimatedComponent(Box);
 
 class LoginScreen extends Component {
   state = {
     opacity: new Animated.Value(0),
-    position: new Animated.Value(0)
+    position: new Animated.Value(0),
   };
 
   componentDidMount() {
@@ -22,7 +23,7 @@ class LoginScreen extends Component {
     Animated.timing(this.state.opacity, {
       toValue: 1,
       duration: 200,
-      delay: 100
+      delay: 100,
     }).start();
   };
 
@@ -30,12 +31,17 @@ class LoginScreen extends Component {
     Animated.timing(this.state.position, {
       toValue: 1,
       duration: 300,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
   };
 
-  onGooglePress = () => {
-    Alert.alert("Google Pressed");
+  onGooglePress = async () => {
+    try {
+      const token = await GoogleApi.loginAsync();
+      console.log("token", token);
+    } catch (error) {
+      console.log("error", error);
+    }
   };
 
   onFacebookPress = async () => {
@@ -52,7 +58,7 @@ class LoginScreen extends Component {
 
     const logoTranslate = this.state.position.interpolate({
       inputRange: [0, 1],
-      outputRange: [145, 0]
+      outputRange: [145, 0],
     });
 
     return (
